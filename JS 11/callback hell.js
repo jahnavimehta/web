@@ -60,9 +60,12 @@ changeColor("yellow", 4000);
  }
 
 changeColor("green", 2000, () => {
-    changeColor("red", 3000, () => {
-        changeColor("yellow", 4000);
+    changeColor("red", 2000, () => {
+        changeColor("yellow", 2000,  () => {
+            changeColor("pink", 2000);
+        });
     });
 });
+
 
 
