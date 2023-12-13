@@ -30,3 +30,24 @@
 
   //after 4s
   setTimeout(changeColor("yellow"), 4000);
+/**************************************************************/
+//code works - without any callbacks used, doesn't manage dependency of calls on each other
+ let h = document.querySelector("h1");
+
+ function changeColor(color, delay){
+    setTimeout(() => {
+        h.style.color = color;        
+    }, delay);
+ }
+
+ //after 2s
+changeColor("green", 2000);
+
+ //after 3s
+changeColor("red", 3000);
+
+  //after 4s
+changeColor("yellow", 4000);
+/***************************************************************/
+//code works - using callbacks, manages dependecy of calls on each other
+
