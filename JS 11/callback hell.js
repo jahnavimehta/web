@@ -50,4 +50,19 @@ changeColor("red", 3000);
 changeColor("yellow", 4000);
 /***************************************************************/
 //code works - using callbacks, manages dependecy of calls on each other
+ let h = document.querySelector("h1");
+
+ function changeColor(color, delay, nextColorChange){
+    setTimeout(() => {
+        h.style.color = color;    
+        if(nextColorChange) nextColorChange();    
+    }, delay);
+ }
+
+changeColor("green", 2000, () => {
+    changeColor("red", 3000, () => {
+        changeColor("yellow", 4000);
+    });
+});
+
 
